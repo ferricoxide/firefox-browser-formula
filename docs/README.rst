@@ -28,7 +28,7 @@ General notes
 
 See the full `SaltStack-Formulas’ Documentation <https://salt-formulas.readthedocs.io/en/latest/>`_.
 
-This formula is intended to be used as part of a larger, SaltStack-based configuration-automation framework (such as `Watchmaker <https://watchmaker.readthedocs.io/>`_).
+This formula is intended to be used as part of a larger, `SaltStack <https://docs.saltproject.io>`_-based configuration-automation framework (such as `Watchmaker <https://watchmaker.readthedocs.io/>`_).
 
 If you need (non-default) configuration, please refer to:
 
