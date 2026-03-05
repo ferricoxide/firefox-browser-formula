@@ -44,18 +44,7 @@ Commit messages
 
 **Commit message formatting is significant!!**
 
-Please see `How to contribute <https://github.com/saltstack-formulas/.github/blob/master/CONTRIBUTING.rst>`_ for more details.
-
-pre-commit
-^^^^^^^^^^
-
-`pre-commit <https://pre-commit.com/>`_ is configured for this formula, which you may optionally use to ease the steps involved in submitting your changes.
-First install  the ``pre-commit`` package manager using the appropriate `method <https://pre-commit.com/#installation>`_, then run ``bin/install-hooks`` and
-now ``pre-commit`` will run automatically on each ``git commit``. ::
-
-  $ bin/install-hooks
-  pre-commit installed at .git/hooks/pre-commit
-  pre-commit installed at .git/hooks/commit-msg
+Please see `How to contribute <CONTRIBUTING.rst>`_ for more details.
 
 Special notes
 -------------
