@@ -1,44 +1,29 @@
 # -*- coding: utf-8 -*-
 # vim: ft=yaml
 ---
+# Example URIs come from navigating the official Mozilla (mirrors) for
+# downloading arbitrary versions of the Firefox installer. As of this
+# file's author/edit-date, older versions of the Firefox installers
+# may be found by exploring the hierarchy rooted at:
+#
+#    https://download-installer.cdn.mozilla.net/pub/firefox/releases/
+#
+# * The next URI path-key (after "releases") will be the X.Y.Z release-number
+# * The next URI path-key is the platform. Currently valid values are:
+#   * linux-aarch64
+#   * linux-x86_64
+#   * mac
+#   * win32
+#   * win64-aarch64
+#   * win64
+# * The next URI path-key is the language/localization.
+# * The final URI path-key is the file-name of the installation-archive
+#
+# Note: While MSI installers are available for Windows, this formula has not
+#       been tested with them due to the ability to directly traverse HTTP
+#       hierarchies not being readily available
+
 firefox:
   lookup:
-    master: template-master
-
-  # Using bash package and udev service as an example. This allows us to
-  # test the template formula itself. You should set these parameters to
-  # examples that make sense in the contexto of the formula you're writing.
-  pkg:
-    name: bash
-  service:
-    name: systemd-journald
-  config: /etc/template-formula.conf
-
-  tofs:
-    # The files_switch key serves as a selector for alternative
-    # directories under the formula files directory. See TOFS pattern
-    # doc for more info.
-    # Note: Any value not evaluated by `config.get` will be used literally.
-    # This can be used to set custom paths, as many levels deep as required.
-    files_switch:
-      - any/path/can/be/used/here
-      - id
-      - roles
-      - osfinger
-      - os
-      - os_family
-
-    # All aspects of path/file resolution are customisable using the options below.
-    # This is unnecessary in most cases; there are sensible defaults.
-    # Default path: salt://< path_prefix >/< dirs.files >/< dirs.default >
-    # I.e.: salt://firefox/files/default
-    # path_prefix: template_alt
-    # dirs:
-    #   files: files_alt
-    #   default: default_alt
-    # The entries under `source_files` are prepended to the default source files
-    # given for the state
-    source_files:
-      firefox-config-file-file-managed:
-        - 'example_alt.tmpl'
-        - 'example_alt.tmpl.jinja'
+    installer_uri_win: 'https://download-installer.cdn.mozilla.net/pub/firefox/releases/147.0.4/win64/en-US/Firefox%20Setup%20147.0.4.exe'
+    installer_uri_elx: (NOT YET IMPLEMENTED)
